@@ -1,29 +1,9 @@
 {
-  "version": 2,
-  "name": "megabeer-site",
-  "builds": [
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "source": "/((?!api/.*).*)",
+      "destination": "/index.html"
     }
-  ],
-  "routes": [
-    {
-      "src": "/promocoes.js",
-      "dest": "/promocoes.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "functions": {
-    "api/promocoes.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  ]
 }
 
