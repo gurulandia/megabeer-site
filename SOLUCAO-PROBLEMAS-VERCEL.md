@@ -8,7 +8,20 @@
 - O novo arquivo já está no projeto corrigido
 - A Vercel detecta automaticamente as funções na pasta `api/`
 
-### 2. **"Build failed" ou "Command failed"**
+### 2. **"npm error ERESOLVE unable to resolve dependency tree"**
+
+**✅ SOLUÇÕES APLICADAS:**
+- Package.json simplificado com apenas dependências essenciais
+- Arquivo `.npmrc` criado com `legacy-peer-deps=true`
+- Conflitos de versão do date-fns resolvidos
+
+### 3. **"Can't resolve 'tw-animate-css'"**
+
+**✅ SOLUÇÃO:** Importação removida do App.css
+- Animações agora são definidas diretamente no CSS
+- Build funciona sem dependências externas desnecessárias
+
+### 4. **"Build failed" ou "Command failed"**
 
 **✅ SOLUÇÕES:**
 ```bash
@@ -18,27 +31,27 @@ Output Directory: dist
 Install Command: npm install
 ```
 
-### 3. **"Module not found" para node-fetch ou jsdom**
+### 5. **"Module not found" para node-fetch ou jsdom**
 
 **✅ SOLUÇÃO:** Dependências já adicionadas no `package.json`
 - Se ainda der erro, vá em Settings → Environment Variables
 - Adicione: `NODE_VERSION` = `18`
 
-### 4. **API /api/promocoes retorna erro 500**
+### 6. **API /api/promocoes retorna erro 500**
 
 **✅ SOLUÇÕES:**
 1. Verifique os logs: Dashboard → Functions → View Logs
 2. Teste a URL da Anota.ai manualmente
 3. A API tem fallback para promoções de exemplo
 
-### 5. **Site carrega mas promoções não aparecem**
+### 7. **Site carrega mas promoções não aparecem**
 
 **✅ SOLUÇÕES:**
 1. Abra o console do navegador (F12)
 2. Verifique se há erros JavaScript
 3. Teste a API: `https://seusite.com/api/promocoes`
 
-### 6. **Domínio não funciona após configurar DNS**
+### 8. **Domínio não funciona após configurar DNS**
 
 **✅ SOLUÇÕES:**
 1. Aguarde até 24h para propagação
